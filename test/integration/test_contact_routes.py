@@ -1,7 +1,13 @@
+from faker import Faker
 from fastapi.testclient import TestClient
+
 from app.main import app
 
 client = TestClient(app)
+
+fake = Faker()
+
+email = fake.email()
 
 # Реєстрація та логін для отримання токена
 def get_token():
@@ -19,7 +25,7 @@ def test_create_contact():
         json={
             "first_name": "John",
             "last_name": "Doe",
-            "email": "john.doe@example.com",
+            "email": email,
             "phone_number": "+123456789",
             "birthday": "1990-01-01",
             "additional_info": "Test info"
@@ -27,7 +33,7 @@ def test_create_contact():
     )
     print(response)
     assert response.status_code == 201
-    assert response.json()["email"] == "john.doe@example.com"
+    assert response.json()["email"] == email
 
 def test_get_contacts():
     token = get_token()
@@ -38,23 +44,25 @@ def test_get_contacts():
 
 def test_search_contact():
     token = get_token()
-    response = client.get("/api/v1/contacts/contacts/search?first_name=John", headers={"Authorization": f"Bearer {token}"})
+    response = client.get(f"/api/v1/contacts/contacts/search?email={email}",
+                          headers={"Authorization": f"Bearer {token}"})
     assert response.status_code == 200
     results = response.json()
     assert any("John" in contact["first_name"] for contact in results)
 
 def test_update_contact():
     token = get_token()
-    contacts = client.get("/api/v1/contacts/contacts/", headers={"Authorization": f"Bearer {token}"}).json()
-    if contacts:
-        contact_id = contacts[0]["id"]
+    contact = client.get(f"/api/v1/contacts/contacts/search?email={email}",
+                         headers={"Authorization": f"Bearer {token}"}).json()
+    if contact:
+        contact_id = contact[0]["id"]
         response = client.put(
             f"/api/v1/contacts/contacts/{contact_id}",
             headers={"Authorization": f"Bearer {token}"},
             json={
                 "first_name": "Johnny",
                 "last_name": "Doe",
-                "email": "johnny.doe@example.com",
+                "email": email,
                 "phone_number": "+987654321",
                 "birthday": "1990-01-01",
                 "additional_info": "Updated info"
