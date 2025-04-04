@@ -6,7 +6,7 @@ import cloudinary.uploader
 from fastapi import BackgroundTasks
 from fastapi import HTTPException
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
-from jose import jwt, JWSError
+from jose import jwt, JWSError, JWTError
 from passlib.context import CryptContext
 from pydantic import SecretStr
 from sqlalchemy.orm import Session
@@ -136,3 +136,45 @@ class AuthService:
         user.avatar_url = result["secure_url"]
         db.commit()
         return {"avatar_url": result["secure_url"]}
+
+    async def send_password_reset_email(self, email: str, background_tasks: BackgroundTasks,
+                                        db: Session = next(get_db())):
+        user = db.query(User).filter(User.email == email).first()
+        if not user:
+            return  # Не розкриваємо, що email не знайдено
+
+        token = self.create_access_token({"sub": user.email})
+        reset_link = f"{os.getenv('FRONTEND_URL')}/reset-password?token={token}"
+
+        message = MessageSchema(
+            subject="Password Reset",
+            recipients=[user.email],
+            body=f"Click to reset your password: {reset_link}",
+            subtype="plain"
+        )
+        fm = FastMail(conf)
+
+        def _safe_send_email():
+            try:
+                return fm.send_message(message)
+            except Exception as e:
+                # Тут можна використати logger.error
+                print(f"❌ Failed to send email: {e}")
+                return None
+
+        background_tasks.add_task(_safe_send_email)
+
+
+    def reset_password(self, token: str, new_password: str, db: Session = next(get_db())):
+        try:
+            payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+            email = payload.get("sub")
+        except JWTError:
+            raise HTTPException(status_code=400, detail="Invalid token")
+
+        user = db.query(User).filter(User.email == email).first()
+        if not user:
+            raise HTTPException(status_code=404, detail="User not found")
+
+        user.password = self.get_password_hash(new_password)
+        db.commit()

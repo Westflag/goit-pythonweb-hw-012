@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Form, status, BackgroundTasks
 
-from app.schemas import UserCreate, Token, UserResponse
+from app.schemas import UserCreate, Token, UserResponse, PasswordResetRequest, PasswordResetConfirm
 from app.services.auth_service import AuthService
 
 router = APIRouter()
@@ -57,3 +57,14 @@ def verify_email(token: str):
     :return: Результат верифікації email
     """
     return auth_service.verify_email(token)
+
+
+@router.post("/request-password-reset")
+async def request_password_reset(data: PasswordResetRequest, background_tasks: BackgroundTasks):
+    await auth_service.send_password_reset_email(data.email, background_tasks)
+    return {"message": "If the email exists, a reset link was sent."}
+
+@router.post("/reset-password")
+async def reset_password(data: PasswordResetConfirm):
+    auth_service.reset_password(data.token, data.new_password)
+    return {"message": "Password updated successfully."}
