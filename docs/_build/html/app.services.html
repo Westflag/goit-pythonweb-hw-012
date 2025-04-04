@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html lang="ua" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>app.services package &#8212; Contacts App 06.04.2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=279e0f84" />
+    <script src="_static/documentation_options.js?v=77aa79cc"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="app.routers package" href="app.routers.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="app.routers.html" title="app.routers package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Contacts App 06.04.2025 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >app</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="app.html" accesskey="U">app package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">app.services package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="app-services-package">
+<h1>app.services package<a class="headerlink" href="#app-services-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-app.services.auth_service">
+<span id="app-services-auth-service-module"></span><h2>app.services.auth_service module<a class="headerlink" href="#module-app.services.auth_service" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.services.auth_service.AuthService">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.services.auth_service.</span></span><span class="sig-name descname"><span class="pre">AuthService</span></span><a class="headerlink" href="#app.services.auth_service.AuthService" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Сервіс для автентифікації користувачів, генерації JWT токенів, верифікації електронної пошти,
+хешування паролів, керування аватарами через Cloudinary.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.auth_service.AuthService.create_access_token">
+<span class="sig-name descname"><span class="pre">create_access_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expires_delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">timedelta</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">datetime.timedelta(seconds=3600)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.services.auth_service.AuthService.create_access_token" title="Link to this definition">¶</a></dt>
+<dd><p>Створює JWT токен доступу.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.auth_service.AuthService.find_user_by_email">
+<span class="sig-name descname"><span class="pre">find_user_by_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">email:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db:</span> <span class="pre">~sqlalchemy.orm.session.Session</span> <span class="pre">=</span> <span class="pre">&lt;sqlalchemy.orm.session.Session</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.services.auth_service.AuthService.find_user_by_email" title="Link to this definition">¶</a></dt>
+<dd><p>Повертає користувача за email.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.auth_service.AuthService.get_password_hash">
+<span class="sig-name descname"><span class="pre">get_password_hash</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#app.services.auth_service.AuthService.get_password_hash" title="Link to this definition">¶</a></dt>
+<dd><p>Хешує пароль користувача.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.auth_service.AuthService.register_user">
+<span class="sig-name descname"><span class="pre">register_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db:</span> <span class="pre">~sqlalchemy.orm.session.Session</span> <span class="pre">=</span> <span class="pre">&lt;sqlalchemy.orm.session.Session</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.services.auth_service.AuthService.register_user" title="Link to this definition">¶</a></dt>
+<dd><p>Реєструє нового користувача з хешованим паролем.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.auth_service.AuthService.send_verification_email">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">send_verification_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_tasks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BackgroundTasks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.services.auth_service.AuthService.send_verification_email" title="Link to this definition">¶</a></dt>
+<dd><p>Надсилає верифікаційний email користувачу з посиланням на підтвердження.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.auth_service.AuthService.upload_avatar_to_cloudinary">
+<span class="sig-name descname"><span class="pre">upload_avatar_to_cloudinary</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_bytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db:</span> <span class="pre">~sqlalchemy.orm.session.Session</span> <span class="pre">=</span> <span class="pre">&lt;sqlalchemy.orm.session.Session</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.services.auth_service.AuthService.upload_avatar_to_cloudinary" title="Link to this definition">¶</a></dt>
+<dd><p>Завантажує аватар користувача на Cloudinary і зберігає URL в базі.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>current_user</strong> -- Поточний користувач</p></li>
+<li><p><strong>file_bytes</strong> -- Бінарні дані файлу</p></li>
+<li><p><strong>db</strong> -- Сесія бази даних</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Словник з URL до аватару</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.auth_service.AuthService.verify_email">
+<span class="sig-name descname"><span class="pre">verify_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db:</span> <span class="pre">~sqlalchemy.orm.session.Session</span> <span class="pre">=</span> <span class="pre">&lt;sqlalchemy.orm.session.Session</span> <span class="pre">object&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.services.auth_service.AuthService.verify_email" title="Link to this definition">¶</a></dt>
+<dd><p>Підтверджує електронну пошту користувача за токеном.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="app.services.auth_service.AuthService.verify_password">
+<span class="sig-name descname"><span class="pre">verify_password</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">plain_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hashed_password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#app.services.auth_service.AuthService.verify_password" title="Link to this definition">¶</a></dt>
+<dd><p>Перевіряє, чи відповідає введений пароль хешу.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-app.services.rate_limiter">
+<span id="app-services-rate-limiter-module"></span><h2>app.services.rate_limiter module<a class="headerlink" href="#module-app.services.rate_limiter" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.services.rate_limiter.limit_requests">
+<span class="sig-prename descclassname"><span class="pre">app.services.rate_limiter.</span></span><span class="sig-name descname"><span class="pre">limit_requests</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.services.rate_limiter.limit_requests" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-app.services">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-app.services" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">app.services package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-app.services.auth_service">app.services.auth_service module</a><ul>
+<li><a class="reference internal" href="#app.services.auth_service.AuthService"><code class="docutils literal notranslate"><span class="pre">AuthService</span></code></a><ul>
+<li><a class="reference internal" href="#app.services.auth_service.AuthService.create_access_token"><code class="docutils literal notranslate"><span class="pre">AuthService.create_access_token()</span></code></a></li>
+<li><a class="reference internal" href="#app.services.auth_service.AuthService.find_user_by_email"><code class="docutils literal notranslate"><span class="pre">AuthService.find_user_by_email()</span></code></a></li>
+<li><a class="reference internal" href="#app.services.auth_service.AuthService.get_password_hash"><code class="docutils literal notranslate"><span class="pre">AuthService.get_password_hash()</span></code></a></li>
+<li><a class="reference internal" href="#app.services.auth_service.AuthService.register_user"><code class="docutils literal notranslate"><span class="pre">AuthService.register_user()</span></code></a></li>
+<li><a class="reference internal" href="#app.services.auth_service.AuthService.send_verification_email"><code class="docutils literal notranslate"><span class="pre">AuthService.send_verification_email()</span></code></a></li>
+<li><a class="reference internal" href="#app.services.auth_service.AuthService.upload_avatar_to_cloudinary"><code class="docutils literal notranslate"><span class="pre">AuthService.upload_avatar_to_cloudinary()</span></code></a></li>
+<li><a class="reference internal" href="#app.services.auth_service.AuthService.verify_email"><code class="docutils literal notranslate"><span class="pre">AuthService.verify_email()</span></code></a></li>
+<li><a class="reference internal" href="#app.services.auth_service.AuthService.verify_password"><code class="docutils literal notranslate"><span class="pre">AuthService.verify_password()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.services.rate_limiter">app.services.rate_limiter module</a><ul>
+<li><a class="reference internal" href="#app.services.rate_limiter.limit_requests"><code class="docutils literal notranslate"><span class="pre">limit_requests()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.services">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="app.routers.html"
+                          title="previous chapter">app.routers package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/app.services.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="app.routers.html" title="app.routers package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Contacts App 06.04.2025 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >app</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="app.html" >app package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">app.services package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, Brelyk.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

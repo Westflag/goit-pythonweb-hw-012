@@ -8,17 +8,18 @@ from fastapi import HTTPException
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from jose import jwt, JWSError
 from passlib.context import CryptContext
+from pydantic import SecretStr, EmailStr
 from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models import User
 
 conf = ConnectionConfig(
-    MAIL_USERNAME=os.getenv("EMAIL_USER"),
-    MAIL_PASSWORD=os.getenv("EMAIL_PASSWORD"),
-    MAIL_FROM=os.getenv("EMAIL_FROM"),
-    MAIL_PORT=int(os.getenv("EMAIL_PORT")),
-    MAIL_SERVER=os.getenv("EMAIL_HOST"),
+    MAIL_USERNAME=os.getenv("EMAIL_USER", "test"),
+    MAIL_PASSWORD=os.getenv("EMAIL_PASSWORD", SecretStr('test')),
+    MAIL_FROM=os.getenv("EMAIL_FROM", "test@test.com"),
+    MAIL_PORT=int(os.getenv("EMAIL_PORT", "1")),
+    MAIL_SERVER=os.getenv("EMAIL_HOST", "test"),
     MAIL_FROM_NAME="Contacts App",
     MAIL_STARTTLS=True,
     MAIL_SSL_TLS=False,
@@ -38,8 +39,13 @@ cloudinary.config(
 
 
 class AuthService:
+    """
+   Сервіс для автентифікації користувачів, генерації JWT токенів, верифікації електронної пошти,
+   хешування паролів, керування аватарами через Cloudinary.
+   """
     # Створення JWT access token
     def create_access_token(self, data: dict, expires_delta: timedelta = timedelta(hours=1)):
+        """Створює JWT токен доступу."""
         to_encode = data.copy()
         expire = datetime.utcnow() + expires_delta
         to_encode.update({"exp": expire})
@@ -48,18 +54,22 @@ class AuthService:
 
     # Хешування пароля
     def get_password_hash(self, password: str) -> str:
+        """Хешує пароль користувача."""
         return pwd_context.hash(password)
 
     # Перевірка пароля
     def verify_password(self, plain_password: str, hashed_password: str) -> bool:
+        """Перевіряє, чи відповідає введений пароль хешу."""
         return pwd_context.verify(plain_password, hashed_password)
 
     # Пошук користувача по email
     def find_user_by_email(self, email: str, db: Session = next(get_db())):
+        """Повертає користувача за email."""
         return db.query(User).filter(User.email == email).first()
 
     # Реєстрація нового користувача
     def register_user(self, user_data, db: Session = next(get_db())):
+        """Реєструє нового користувача з хешованим паролем."""
         existing = db.query(User).filter(User.email == user_data.email).first()
         if existing:
             raise HTTPException(status_code=409, detail="User with this email already exists.")
@@ -72,6 +82,7 @@ class AuthService:
 
     # Надсилання листа з посиланням для верифікації email
     async def send_verification_email(self, user, background_tasks: BackgroundTasks):
+        """Надсилає верифікаційний email користувачу з посиланням на підтвердження."""
         token = self.create_access_token({"sub": user.email})
         verification_link = f"{os.getenv('FRONTEND_URL')}/verify-email/{token}"
         message = MessageSchema(
@@ -85,6 +96,7 @@ class AuthService:
 
     # Підтвердження email користувача
     def verify_email(self, token: str, db: Session = next(get_db())):
+        """Підтверджує електронну пошту користувача за токеном."""
         try:
             payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
             email = payload.get("sub")
@@ -100,6 +112,14 @@ class AuthService:
 
     # Завантаження аватара користувача на Cloudinary
     def upload_avatar_to_cloudinary(self, current_user, file_bytes, db: Session = next(get_db())):
+        """
+     Завантажує аватар користувача на Cloudinary і зберігає URL в базі.
+
+     :param current_user: Поточний користувач
+     :param file_bytes: Бінарні дані файлу
+     :param db: Сесія бази даних
+     :return: Словник з URL до аватару
+     """
         result = cloudinary.uploader.upload(file_bytes, folder="avatars")
         user = db.query(User).filter(User.id == current_user.id).first()
         user.avatar_url = result["secure_url"]

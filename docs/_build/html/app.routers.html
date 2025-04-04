@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="ua" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>app.routers package &#8212; Contacts App 06.04.2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=279e0f84" />
+    <script src="_static/documentation_options.js?v=77aa79cc"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="app.services package" href="app.services.html" />
+    <link rel="prev" title="app package" href="app.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="app.services.html" title="app.services package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="app.html" title="app package"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Contacts App 06.04.2025 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >app</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="app.html" accesskey="U">app package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">app.routers package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="app-routers-package">
+<h1>app.routers package<a class="headerlink" href="#app-routers-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-app.routers.auth">
+<span id="app-routers-auth-module"></span><h2>app.routers.auth module<a class="headerlink" href="#module-app.routers.auth" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.auth.login">
+<span class="sig-prename descclassname"><span class="pre">app.routers.auth.</span></span><span class="sig-name descname"><span class="pre">login</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">username</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Form(PydanticUndefined)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Form(PydanticUndefined)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.auth.login" title="Link to this definition">¶</a></dt>
+<dd><p>Авторизація користувача та видача JWT токена.</p>
+<ul class="simple">
+<li><p><strong>form_data</strong>: Логін і пароль</p></li>
+<li><p><strong>db</strong>: Сесія бази даних</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>JWT токен доступу (access_token)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.auth.signup">
+<em class="property"><span class="k"><span class="pre">async</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.routers.auth.</span></span><span class="sig-name descname"><span class="pre">signup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="app.html#app.schemas.UserCreate" title="app.schemas.UserCreate"><span class="pre">UserCreate</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">background_tasks</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">BackgroundTasks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.auth.signup" title="Link to this definition">¶</a></dt>
+<dd><p>Реєстрація нового користувача.</p>
+<ul class="simple">
+<li><p><strong>user</strong>: Дані нового користувача</p></li>
+<li><p><strong>background_tasks</strong>: Завдання у фоновому режимі для надсилання верифікації</p></li>
+<li><p><strong>db</strong>: Сесія бази даних</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Дані нового користувача з відповіддю 201 Created</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.auth.verify_email">
+<span class="sig-prename descclassname"><span class="pre">app.routers.auth.</span></span><span class="sig-name descname"><span class="pre">verify_email</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.auth.verify_email" title="Link to this definition">¶</a></dt>
+<dd><p>Підтвердження електронної пошти користувача.</p>
+<ul class="simple">
+<li><p><strong>token</strong>: Токен підтвердження з листа</p></li>
+<li><p><strong>db</strong>: Сесія бази даних</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Результат верифікації email</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-app.routers.contacts">
+<span id="app-routers-contacts-module"></span><h2>app.routers.contacts module<a class="headerlink" href="#module-app.routers.contacts" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.contacts.create_contact">
+<span class="sig-prename descclassname"><span class="pre">app.routers.contacts.</span></span><span class="sig-name descname"><span class="pre">create_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contact</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="app.html#app.schemas.ContactCreate" title="app.schemas.ContactCreate"><span class="pre">ContactCreate</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.contacts.create_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Створює новий контакт для поточного користувача.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.contacts.delete_contact">
+<span class="sig-prename descclassname"><span class="pre">app.routers.contacts.</span></span><span class="sig-name descname"><span class="pre">delete_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contact_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.contacts.delete_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Видаляє контакт користувача.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.contacts.read_contact">
+<span class="sig-prename descclassname"><span class="pre">app.routers.contacts.</span></span><span class="sig-name descname"><span class="pre">read_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contact_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.contacts.read_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Отримує конкретний контакт за ID.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.contacts.read_contacts">
+<span class="sig-prename descclassname"><span class="pre">app.routers.contacts.</span></span><span class="sig-name descname"><span class="pre">read_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.contacts.read_contacts" title="Link to this definition">¶</a></dt>
+<dd><p>Отримує всі контакти поточного користувача.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.contacts.search_contacts">
+<span class="sig-prename descclassname"><span class="pre">app.routers.contacts.</span></span><span class="sig-name descname"><span class="pre">search_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">first_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Query(None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Query(None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Query(None)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.contacts.search_contacts" title="Link to this definition">¶</a></dt>
+<dd><p>Пошук контактів за іменем, прізвищем або email.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.contacts.upcoming_birthdays">
+<span class="sig-prename descclassname"><span class="pre">app.routers.contacts.</span></span><span class="sig-name descname"><span class="pre">upcoming_birthdays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.contacts.upcoming_birthdays" title="Link to this definition">¶</a></dt>
+<dd><p>Отримує контакти з днями народження впродовж 7 днів.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.contacts.update_contact">
+<span class="sig-prename descclassname"><span class="pre">app.routers.contacts.</span></span><span class="sig-name descname"><span class="pre">update_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contact_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="app.html#app.schemas.ContactCreate" title="app.schemas.ContactCreate"><span class="pre">ContactCreate</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(get_db)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.contacts.update_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Оновлює контакт користувача.</p>
+</dd></dl>
+
+</section>
+<section id="module-app.routers.users">
+<span id="app-routers-users-module"></span><h2>app.routers.users module<a class="headerlink" href="#module-app.routers.users" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.users.get_me">
+<span class="sig-prename descclassname"><span class="pre">app.routers.users.</span></span><span class="sig-name descname"><span class="pre">get_me</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.users.get_me" title="Link to this definition">¶</a></dt>
+<dd><p>Отримати інформацію про поточного користувача.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.routers.users.update_avatar">
+<span class="sig-prename descclassname"><span class="pre">app.routers.users.</span></span><span class="sig-name descname"><span class="pre">update_avatar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">current_user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Depends(get_current_user)</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">UploadFile</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">File(PydanticUndefined)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.routers.users.update_avatar" title="Link to this definition">¶</a></dt>
+<dd><p>Завантажити аватар користувача на Cloudinary.</p>
+</dd></dl>
+
+</section>
+<section id="module-app.routers">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-app.routers" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">app.routers package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-app.routers.auth">app.routers.auth module</a><ul>
+<li><a class="reference internal" href="#app.routers.auth.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li><a class="reference internal" href="#app.routers.auth.signup"><code class="docutils literal notranslate"><span class="pre">signup()</span></code></a></li>
+<li><a class="reference internal" href="#app.routers.auth.verify_email"><code class="docutils literal notranslate"><span class="pre">verify_email()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.routers.contacts">app.routers.contacts module</a><ul>
+<li><a class="reference internal" href="#app.routers.contacts.create_contact"><code class="docutils literal notranslate"><span class="pre">create_contact()</span></code></a></li>
+<li><a class="reference internal" href="#app.routers.contacts.delete_contact"><code class="docutils literal notranslate"><span class="pre">delete_contact()</span></code></a></li>
+<li><a class="reference internal" href="#app.routers.contacts.read_contact"><code class="docutils literal notranslate"><span class="pre">read_contact()</span></code></a></li>
+<li><a class="reference internal" href="#app.routers.contacts.read_contacts"><code class="docutils literal notranslate"><span class="pre">read_contacts()</span></code></a></li>
+<li><a class="reference internal" href="#app.routers.contacts.search_contacts"><code class="docutils literal notranslate"><span class="pre">search_contacts()</span></code></a></li>
+<li><a class="reference internal" href="#app.routers.contacts.upcoming_birthdays"><code class="docutils literal notranslate"><span class="pre">upcoming_birthdays()</span></code></a></li>
+<li><a class="reference internal" href="#app.routers.contacts.update_contact"><code class="docutils literal notranslate"><span class="pre">update_contact()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.routers.users">app.routers.users module</a><ul>
+<li><a class="reference internal" href="#app.routers.users.get_me"><code class="docutils literal notranslate"><span class="pre">get_me()</span></code></a></li>
+<li><a class="reference internal" href="#app.routers.users.update_avatar"><code class="docutils literal notranslate"><span class="pre">update_avatar()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.routers">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="app.html"
+                          title="previous chapter">app package</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="app.services.html"
+                          title="next chapter">app.services package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/app.routers.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="app.services.html" title="app.services package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="app.html" title="app package"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Contacts App 06.04.2025 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >app</a> &#187;</li>
+          <li class="nav-item nav-item-2"><a href="app.html" >app package</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">app.routers package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, Brelyk.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

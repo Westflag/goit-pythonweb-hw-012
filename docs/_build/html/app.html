@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+
+<html lang="ua" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>app package &#8212; Contacts App 06.04.2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=279e0f84" />
+    <script src="_static/documentation_options.js?v=77aa79cc"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="app.routers package" href="app.routers.html" />
+    <link rel="prev" title="app" href="modules.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="app.routers.html" title="app.routers package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="app"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Contacts App 06.04.2025 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" accesskey="U">app</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">app package</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="app-package">
+<h1>app package<a class="headerlink" href="#app-package" title="Link to this heading">¶</a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="app.routers.html">app.routers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="app.routers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.routers.html#module-app.routers.auth">app.routers.auth module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.auth.login"><code class="docutils literal notranslate"><span class="pre">login()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.auth.signup"><code class="docutils literal notranslate"><span class="pre">signup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.auth.verify_email"><code class="docutils literal notranslate"><span class="pre">verify_email()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.routers.html#module-app.routers.contacts">app.routers.contacts module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.contacts.create_contact"><code class="docutils literal notranslate"><span class="pre">create_contact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.contacts.delete_contact"><code class="docutils literal notranslate"><span class="pre">delete_contact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.contacts.read_contact"><code class="docutils literal notranslate"><span class="pre">read_contact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.contacts.read_contacts"><code class="docutils literal notranslate"><span class="pre">read_contacts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.contacts.search_contacts"><code class="docutils literal notranslate"><span class="pre">search_contacts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.contacts.upcoming_birthdays"><code class="docutils literal notranslate"><span class="pre">upcoming_birthdays()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.contacts.update_contact"><code class="docutils literal notranslate"><span class="pre">update_contact()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.routers.html#module-app.routers.users">app.routers.users module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.users.get_me"><code class="docutils literal notranslate"><span class="pre">get_me()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html#app.routers.users.update_avatar"><code class="docutils literal notranslate"><span class="pre">update_avatar()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.routers.html#module-app.routers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="app.services.html">app.services package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="app.services.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.services.html#module-app.services.auth_service">app.services.auth_service module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.services.html#app.services.auth_service.AuthService"><code class="docutils literal notranslate"><span class="pre">AuthService</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#app.services.auth_service.AuthService.create_access_token"><code class="docutils literal notranslate"><span class="pre">AuthService.create_access_token()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#app.services.auth_service.AuthService.find_user_by_email"><code class="docutils literal notranslate"><span class="pre">AuthService.find_user_by_email()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#app.services.auth_service.AuthService.get_password_hash"><code class="docutils literal notranslate"><span class="pre">AuthService.get_password_hash()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#app.services.auth_service.AuthService.register_user"><code class="docutils literal notranslate"><span class="pre">AuthService.register_user()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#app.services.auth_service.AuthService.send_verification_email"><code class="docutils literal notranslate"><span class="pre">AuthService.send_verification_email()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#app.services.auth_service.AuthService.upload_avatar_to_cloudinary"><code class="docutils literal notranslate"><span class="pre">AuthService.upload_avatar_to_cloudinary()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#app.services.auth_service.AuthService.verify_email"><code class="docutils literal notranslate"><span class="pre">AuthService.verify_email()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#app.services.auth_service.AuthService.verify_password"><code class="docutils literal notranslate"><span class="pre">AuthService.verify_password()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.services.html#module-app.services.rate_limiter">app.services.rate_limiter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.services.html#app.services.rate_limiter.limit_requests"><code class="docutils literal notranslate"><span class="pre">limit_requests()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.services.html#module-app.services">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-app.crud">
+<span id="app-crud-module"></span><h2>app.crud module<a class="headerlink" href="#module-app.crud" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.create_contact">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">create_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.create_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Створює новий контакт для вказаного користувача.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> -- Сесія бази даних SQLAlchemy</p></li>
+<li><p><strong>contact_data</strong> -- Дані нового контакту (Pydantic модель)</p></li>
+<li><p><strong>user_id</strong> -- ID поточного користувача</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Створений об'єкт контакту або None, якщо email вже існує</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.delete_contact">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">delete_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.delete_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Видаляє контакт за ID для конкретного користувача.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> -- Сесія бази даних</p></li>
+<li><p><strong>contact_id</strong> -- ID контакту</p></li>
+<li><p><strong>user_id</strong> -- ID користувача</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Видалений контакт або None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.get_contact">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">get_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.get_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Повертає один контакт по його ID для конкретного користувача.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> -- Сесія бази даних</p></li>
+<li><p><strong>contact_id</strong> -- ID контакту</p></li>
+<li><p><strong>user_id</strong> -- ID користувача</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Об'єкт контакту або None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.get_contacts">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">get_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.get_contacts" title="Link to this definition">¶</a></dt>
+<dd><p>Отримує список контактів користувача з пагінацією.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> -- Сесія бази даних</p></li>
+<li><p><strong>skip</strong> -- Кількість пропущених записів</p></li>
+<li><p><strong>limit</strong> -- Максимальна кількість результатів</p></li>
+<li><p><strong>user_id</strong> -- ID користувача</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Список контактів</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.get_upcoming_birthdays">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">get_upcoming_birthdays</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.get_upcoming_birthdays" title="Link to this definition">¶</a></dt>
+<dd><p>Повертає список контактів, у яких день народження протягом наступних 7 днів.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> -- Сесія бази даних</p></li>
+<li><p><strong>user_id</strong> -- ID користувача</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Список контактів з близьким днем народження</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.search_contacts">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">search_contacts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.search_contacts" title="Link to this definition">¶</a></dt>
+<dd><p>Шукає контакти користувача за іменем, прізвищем або email.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> -- Сесія бази даних</p></li>
+<li><p><strong>first_name</strong> -- Ім'я для пошуку (опціонально)</p></li>
+<li><p><strong>last_name</strong> -- Прізвище для пошуку (опціонально)</p></li>
+<li><p><strong>email</strong> -- Email для пошуку (опціонально)</p></li>
+<li><p><strong>user_id</strong> -- ID користувача</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Список знайдених контактів</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="app.crud.update_contact">
+<span class="sig-prename descclassname"><span class="pre">app.crud.</span></span><span class="sig-name descname"><span class="pre">update_contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">db</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Session</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contact_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.crud.update_contact" title="Link to this definition">¶</a></dt>
+<dd><p>Оновлює контакт користувача за ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>db</strong> -- Сесія бази даних</p></li>
+<li><p><strong>contact_id</strong> -- ID контакту</p></li>
+<li><p><strong>contact_data</strong> -- Нові дані контакту (Pydantic модель)</p></li>
+<li><p><strong>user_id</strong> -- ID користувача</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Оновлений контакт або None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-app.database">
+<span id="app-database-module"></span><h2>app.database module<a class="headerlink" href="#module-app.database" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.database.get_db">
+<span class="sig-prename descclassname"><span class="pre">app.database.</span></span><span class="sig-name descname"><span class="pre">get_db</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#app.database.get_db" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="module-app.dependencies">
+<span id="app-dependencies-module"></span><h2>app.dependencies module<a class="headerlink" href="#module-app.dependencies" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="app.dependencies.get_current_user">
+<span class="sig-prename descclassname"><span class="pre">app.dependencies.</span></span><span class="sig-name descname"><span class="pre">get_current_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Depends(OAuth2PasswordBearer)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.dependencies.get_current_user" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</section>
+<section id="app-main-module">
+<h2>app.main module<a class="headerlink" href="#app-main-module" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-app.models">
+<span id="app-models-module"></span><h2>app.models module<a class="headerlink" href="#module-app.models" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.models.Contact">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.models.</span></span><span class="sig-name descname"><span class="pre">Contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.Contact" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.Contact.additional_info">
+<span class="sig-name descname"><span class="pre">additional_info</span></span><a class="headerlink" href="#app.models.Contact.additional_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.Contact.birthday">
+<span class="sig-name descname"><span class="pre">birthday</span></span><a class="headerlink" href="#app.models.Contact.birthday" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.Contact.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#app.models.Contact.email" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.Contact.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><a class="headerlink" href="#app.models.Contact.first_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.Contact.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#app.models.Contact.id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.Contact.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><a class="headerlink" href="#app.models.Contact.last_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.Contact.phone_number">
+<span class="sig-name descname"><span class="pre">phone_number</span></span><a class="headerlink" href="#app.models.Contact.phone_number" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.Contact.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#app.models.Contact.user_id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.models.User">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.models.</span></span><span class="sig-name descname"><span class="pre">User</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.models.User" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Base</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.User.avatar_url">
+<span class="sig-name descname"><span class="pre">avatar_url</span></span><a class="headerlink" href="#app.models.User.avatar_url" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.User.email">
+<span class="sig-name descname"><span class="pre">email</span></span><a class="headerlink" href="#app.models.User.email" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.User.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#app.models.User.id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.User.is_verified">
+<span class="sig-name descname"><span class="pre">is_verified</span></span><a class="headerlink" href="#app.models.User.is_verified" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.models.User.password">
+<span class="sig-name descname"><span class="pre">password</span></span><a class="headerlink" href="#app.models.User.password" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-app.schemas">
+<span id="app-schemas-module"></span><h2>app.schemas module<a class="headerlink" href="#module-app.schemas" title="Link to this heading">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.schemas.ContactCreate">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.schemas.</span></span><span class="sig-name descname"><span class="pre">ContactCreate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EmailStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phone_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">birthday</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.schemas.ContactCreate" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactCreate.additional_info">
+<span class="sig-name descname"><span class="pre">additional_info</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#app.schemas.ContactCreate.additional_info" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactCreate.birthday">
+<span class="sig-name descname"><span class="pre">birthday</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">date</span></em><a class="headerlink" href="#app.schemas.ContactCreate.birthday" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactCreate.email">
+<span class="sig-name descname"><span class="pre">email</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">EmailStr</span></em><a class="headerlink" href="#app.schemas.ContactCreate.email" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactCreate.first_name">
+<span class="sig-name descname"><span class="pre">first_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#app.schemas.ContactCreate.first_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactCreate.last_name">
+<span class="sig-name descname"><span class="pre">last_name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#app.schemas.ContactCreate.last_name" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactCreate.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#app.schemas.ContactCreate.model_config" title="Link to this definition">¶</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactCreate.phone_number">
+<span class="sig-name descname"><span class="pre">phone_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#app.schemas.ContactCreate.phone_number" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.schemas.ContactResponse">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.schemas.</span></span><span class="sig-name descname"><span class="pre">ContactResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EmailStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phone_number</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">birthday</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">additional_info</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.schemas.ContactResponse" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#app.schemas.ContactCreate" title="app.schemas.ContactCreate"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContactCreate</span></code></a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.schemas.ContactResponse.Config">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Config</span></span><a class="headerlink" href="#app.schemas.ContactResponse.Config" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactResponse.Config.from_attributes">
+<span class="sig-name descname"><span class="pre">from_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#app.schemas.ContactResponse.Config.from_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactResponse.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#app.schemas.ContactResponse.id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.ContactResponse.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'from_attributes':</span> <span class="pre">True}</span></em><a class="headerlink" href="#app.schemas.ContactResponse.model_config" title="Link to this definition">¶</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.schemas.Token">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.schemas.</span></span><span class="sig-name descname"><span class="pre">Token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">token_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.schemas.Token" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.Token.access_token">
+<span class="sig-name descname"><span class="pre">access_token</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#app.schemas.Token.access_token" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.Token.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#app.schemas.Token.model_config" title="Link to this definition">¶</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.Token.token_type">
+<span class="sig-name descname"><span class="pre">token_type</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#app.schemas.Token.token_type" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.schemas.UserCreate">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.schemas.</span></span><span class="sig-name descname"><span class="pre">UserCreate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EmailStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.schemas.UserCreate" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.UserCreate.email">
+<span class="sig-name descname"><span class="pre">email</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">EmailStr</span></em><a class="headerlink" href="#app.schemas.UserCreate.email" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.UserCreate.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#app.schemas.UserCreate.model_config" title="Link to this definition">¶</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.UserCreate.password">
+<span class="sig-name descname"><span class="pre">password</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#app.schemas.UserCreate.password" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="app.schemas.UserResponse">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">app.schemas.</span></span><span class="sig-name descname"><span class="pre">UserResponse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">email</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">EmailStr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_verified</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">avatar_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#app.schemas.UserResponse" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">BaseModel</span></code></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="app.schemas.UserResponse.Config">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Config</span></span><a class="headerlink" href="#app.schemas.UserResponse.Config" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.UserResponse.Config.from_attributes">
+<span class="sig-name descname"><span class="pre">from_attributes</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">True</span></em><a class="headerlink" href="#app.schemas.UserResponse.Config.from_attributes" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.UserResponse.avatar_url">
+<span class="sig-name descname"><span class="pre">avatar_url</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#app.schemas.UserResponse.avatar_url" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.UserResponse.email">
+<span class="sig-name descname"><span class="pre">email</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">EmailStr</span></em><a class="headerlink" href="#app.schemas.UserResponse.email" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.UserResponse.id">
+<span class="sig-name descname"><span class="pre">id</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#app.schemas.UserResponse.id" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.UserResponse.is_verified">
+<span class="sig-name descname"><span class="pre">is_verified</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">bool</span></em><a class="headerlink" href="#app.schemas.UserResponse.is_verified" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="app.schemas.UserResponse.model_config">
+<span class="sig-name descname"><span class="pre">model_config</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">ClassVar</span><span class="p"><span class="pre">[</span></span><span class="pre">ConfigDict</span><span class="p"><span class="pre">]</span></span></em><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'from_attributes':</span> <span class="pre">True}</span></em><a class="headerlink" href="#app.schemas.UserResponse.model_config" title="Link to this definition">¶</a></dt>
+<dd><p>Configuration for the model, should be a dictionary conforming to [<cite>ConfigDict</cite>][pydantic.config.ConfigDict].</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-app">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-app" title="Link to this heading">¶</a></h2>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">app package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-app.crud">app.crud module</a><ul>
+<li><a class="reference internal" href="#app.crud.create_contact"><code class="docutils literal notranslate"><span class="pre">create_contact()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.delete_contact"><code class="docutils literal notranslate"><span class="pre">delete_contact()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.get_contact"><code class="docutils literal notranslate"><span class="pre">get_contact()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.get_contacts"><code class="docutils literal notranslate"><span class="pre">get_contacts()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.get_upcoming_birthdays"><code class="docutils literal notranslate"><span class="pre">get_upcoming_birthdays()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.search_contacts"><code class="docutils literal notranslate"><span class="pre">search_contacts()</span></code></a></li>
+<li><a class="reference internal" href="#app.crud.update_contact"><code class="docutils literal notranslate"><span class="pre">update_contact()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.database">app.database module</a><ul>
+<li><a class="reference internal" href="#app.database.get_db"><code class="docutils literal notranslate"><span class="pre">get_db()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.dependencies">app.dependencies module</a><ul>
+<li><a class="reference internal" href="#app.dependencies.get_current_user"><code class="docutils literal notranslate"><span class="pre">get_current_user()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#app-main-module">app.main module</a></li>
+<li><a class="reference internal" href="#module-app.models">app.models module</a><ul>
+<li><a class="reference internal" href="#app.models.Contact"><code class="docutils literal notranslate"><span class="pre">Contact</span></code></a><ul>
+<li><a class="reference internal" href="#app.models.Contact.additional_info"><code class="docutils literal notranslate"><span class="pre">Contact.additional_info</span></code></a></li>
+<li><a class="reference internal" href="#app.models.Contact.birthday"><code class="docutils literal notranslate"><span class="pre">Contact.birthday</span></code></a></li>
+<li><a class="reference internal" href="#app.models.Contact.email"><code class="docutils literal notranslate"><span class="pre">Contact.email</span></code></a></li>
+<li><a class="reference internal" href="#app.models.Contact.first_name"><code class="docutils literal notranslate"><span class="pre">Contact.first_name</span></code></a></li>
+<li><a class="reference internal" href="#app.models.Contact.id"><code class="docutils literal notranslate"><span class="pre">Contact.id</span></code></a></li>
+<li><a class="reference internal" href="#app.models.Contact.last_name"><code class="docutils literal notranslate"><span class="pre">Contact.last_name</span></code></a></li>
+<li><a class="reference internal" href="#app.models.Contact.phone_number"><code class="docutils literal notranslate"><span class="pre">Contact.phone_number</span></code></a></li>
+<li><a class="reference internal" href="#app.models.Contact.user_id"><code class="docutils literal notranslate"><span class="pre">Contact.user_id</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#app.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li><a class="reference internal" href="#app.models.User.avatar_url"><code class="docutils literal notranslate"><span class="pre">User.avatar_url</span></code></a></li>
+<li><a class="reference internal" href="#app.models.User.email"><code class="docutils literal notranslate"><span class="pre">User.email</span></code></a></li>
+<li><a class="reference internal" href="#app.models.User.id"><code class="docutils literal notranslate"><span class="pre">User.id</span></code></a></li>
+<li><a class="reference internal" href="#app.models.User.is_verified"><code class="docutils literal notranslate"><span class="pre">User.is_verified</span></code></a></li>
+<li><a class="reference internal" href="#app.models.User.password"><code class="docutils literal notranslate"><span class="pre">User.password</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app.schemas">app.schemas module</a><ul>
+<li><a class="reference internal" href="#app.schemas.ContactCreate"><code class="docutils literal notranslate"><span class="pre">ContactCreate</span></code></a><ul>
+<li><a class="reference internal" href="#app.schemas.ContactCreate.additional_info"><code class="docutils literal notranslate"><span class="pre">ContactCreate.additional_info</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.ContactCreate.birthday"><code class="docutils literal notranslate"><span class="pre">ContactCreate.birthday</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.ContactCreate.email"><code class="docutils literal notranslate"><span class="pre">ContactCreate.email</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.ContactCreate.first_name"><code class="docutils literal notranslate"><span class="pre">ContactCreate.first_name</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.ContactCreate.last_name"><code class="docutils literal notranslate"><span class="pre">ContactCreate.last_name</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.ContactCreate.model_config"><code class="docutils literal notranslate"><span class="pre">ContactCreate.model_config</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.ContactCreate.phone_number"><code class="docutils literal notranslate"><span class="pre">ContactCreate.phone_number</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#app.schemas.ContactResponse"><code class="docutils literal notranslate"><span class="pre">ContactResponse</span></code></a><ul>
+<li><a class="reference internal" href="#app.schemas.ContactResponse.Config"><code class="docutils literal notranslate"><span class="pre">ContactResponse.Config</span></code></a><ul>
+<li><a class="reference internal" href="#app.schemas.ContactResponse.Config.from_attributes"><code class="docutils literal notranslate"><span class="pre">ContactResponse.Config.from_attributes</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#app.schemas.ContactResponse.id"><code class="docutils literal notranslate"><span class="pre">ContactResponse.id</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.ContactResponse.model_config"><code class="docutils literal notranslate"><span class="pre">ContactResponse.model_config</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#app.schemas.Token"><code class="docutils literal notranslate"><span class="pre">Token</span></code></a><ul>
+<li><a class="reference internal" href="#app.schemas.Token.access_token"><code class="docutils literal notranslate"><span class="pre">Token.access_token</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.Token.model_config"><code class="docutils literal notranslate"><span class="pre">Token.model_config</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.Token.token_type"><code class="docutils literal notranslate"><span class="pre">Token.token_type</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#app.schemas.UserCreate"><code class="docutils literal notranslate"><span class="pre">UserCreate</span></code></a><ul>
+<li><a class="reference internal" href="#app.schemas.UserCreate.email"><code class="docutils literal notranslate"><span class="pre">UserCreate.email</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.UserCreate.model_config"><code class="docutils literal notranslate"><span class="pre">UserCreate.model_config</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.UserCreate.password"><code class="docutils literal notranslate"><span class="pre">UserCreate.password</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#app.schemas.UserResponse"><code class="docutils literal notranslate"><span class="pre">UserResponse</span></code></a><ul>
+<li><a class="reference internal" href="#app.schemas.UserResponse.Config"><code class="docutils literal notranslate"><span class="pre">UserResponse.Config</span></code></a><ul>
+<li><a class="reference internal" href="#app.schemas.UserResponse.Config.from_attributes"><code class="docutils literal notranslate"><span class="pre">UserResponse.Config.from_attributes</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#app.schemas.UserResponse.avatar_url"><code class="docutils literal notranslate"><span class="pre">UserResponse.avatar_url</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.UserResponse.email"><code class="docutils literal notranslate"><span class="pre">UserResponse.email</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.UserResponse.id"><code class="docutils literal notranslate"><span class="pre">UserResponse.id</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.UserResponse.is_verified"><code class="docutils literal notranslate"><span class="pre">UserResponse.is_verified</span></code></a></li>
+<li><a class="reference internal" href="#app.schemas.UserResponse.model_config"><code class="docutils literal notranslate"><span class="pre">UserResponse.model_config</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-app">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="modules.html"
+                          title="previous chapter">app</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="app.routers.html"
+                          title="next chapter">app.routers package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/app.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="app.routers.html" title="app.routers package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="modules.html" title="app"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Contacts App 06.04.2025 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="modules.html" >app</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">app package</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, Brelyk.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

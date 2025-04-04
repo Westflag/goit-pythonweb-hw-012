@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="ua" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>app &#8212; Contacts App 06.04.2025 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css?v=279e0f84" />
+    <script src="_static/documentation_options.js?v=77aa79cc"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="app package" href="app.html" />
+    <link rel="prev" title="Welcome to FastAPI Contacts API&#39;s documentation!" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="app.html" title="app package"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to FastAPI Contacts API&#39;s documentation!"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Contacts App 06.04.2025 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">app</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="app">
+<h1>app<a class="headerlink" href="#app" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="app.html">app package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="app.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.routers.html">app.routers package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.routers.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.routers.html#module-app.routers.auth">app.routers.auth module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.routers.html#module-app.routers.contacts">app.routers.contacts module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.routers.html#module-app.routers.users">app.routers.users module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.routers.html#module-app.routers">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="app.services.html">app.services package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#module-app.services.auth_service">app.services.auth_service module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#module-app.services.rate_limiter">app.services.rate_limiter module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.services.html#module-app.services">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.html#module-app.crud">app.crud module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.crud.create_contact"><code class="docutils literal notranslate"><span class="pre">create_contact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.crud.delete_contact"><code class="docutils literal notranslate"><span class="pre">delete_contact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.crud.get_contact"><code class="docutils literal notranslate"><span class="pre">get_contact()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.crud.get_contacts"><code class="docutils literal notranslate"><span class="pre">get_contacts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.crud.get_upcoming_birthdays"><code class="docutils literal notranslate"><span class="pre">get_upcoming_birthdays()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.crud.search_contacts"><code class="docutils literal notranslate"><span class="pre">search_contacts()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.crud.update_contact"><code class="docutils literal notranslate"><span class="pre">update_contact()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.html#module-app.database">app.database module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.database.get_db"><code class="docutils literal notranslate"><span class="pre">get_db()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.html#module-app.dependencies">app.dependencies module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.dependencies.get_current_user"><code class="docutils literal notranslate"><span class="pre">get_current_user()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.html#app-main-module">app.main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="app.html#module-app.models">app.models module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.models.Contact"><code class="docutils literal notranslate"><span class="pre">Contact</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.Contact.additional_info"><code class="docutils literal notranslate"><span class="pre">Contact.additional_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.Contact.birthday"><code class="docutils literal notranslate"><span class="pre">Contact.birthday</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.Contact.email"><code class="docutils literal notranslate"><span class="pre">Contact.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.Contact.first_name"><code class="docutils literal notranslate"><span class="pre">Contact.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.Contact.id"><code class="docutils literal notranslate"><span class="pre">Contact.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.Contact.last_name"><code class="docutils literal notranslate"><span class="pre">Contact.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.Contact.phone_number"><code class="docutils literal notranslate"><span class="pre">Contact.phone_number</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.Contact.user_id"><code class="docutils literal notranslate"><span class="pre">Contact.user_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.models.User"><code class="docutils literal notranslate"><span class="pre">User</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.User.avatar_url"><code class="docutils literal notranslate"><span class="pre">User.avatar_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.User.email"><code class="docutils literal notranslate"><span class="pre">User.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.User.id"><code class="docutils literal notranslate"><span class="pre">User.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.User.is_verified"><code class="docutils literal notranslate"><span class="pre">User.is_verified</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.models.User.password"><code class="docutils literal notranslate"><span class="pre">User.password</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.html#module-app.schemas">app.schemas module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.schemas.ContactCreate"><code class="docutils literal notranslate"><span class="pre">ContactCreate</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactCreate.additional_info"><code class="docutils literal notranslate"><span class="pre">ContactCreate.additional_info</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactCreate.birthday"><code class="docutils literal notranslate"><span class="pre">ContactCreate.birthday</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactCreate.email"><code class="docutils literal notranslate"><span class="pre">ContactCreate.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactCreate.first_name"><code class="docutils literal notranslate"><span class="pre">ContactCreate.first_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactCreate.last_name"><code class="docutils literal notranslate"><span class="pre">ContactCreate.last_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactCreate.model_config"><code class="docutils literal notranslate"><span class="pre">ContactCreate.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactCreate.phone_number"><code class="docutils literal notranslate"><span class="pre">ContactCreate.phone_number</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.schemas.ContactResponse"><code class="docutils literal notranslate"><span class="pre">ContactResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactResponse.Config"><code class="docutils literal notranslate"><span class="pre">ContactResponse.Config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactResponse.id"><code class="docutils literal notranslate"><span class="pre">ContactResponse.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.ContactResponse.model_config"><code class="docutils literal notranslate"><span class="pre">ContactResponse.model_config</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.schemas.Token"><code class="docutils literal notranslate"><span class="pre">Token</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.Token.access_token"><code class="docutils literal notranslate"><span class="pre">Token.access_token</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.Token.model_config"><code class="docutils literal notranslate"><span class="pre">Token.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.Token.token_type"><code class="docutils literal notranslate"><span class="pre">Token.token_type</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.schemas.UserCreate"><code class="docutils literal notranslate"><span class="pre">UserCreate</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.UserCreate.email"><code class="docutils literal notranslate"><span class="pre">UserCreate.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.UserCreate.model_config"><code class="docutils literal notranslate"><span class="pre">UserCreate.model_config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.UserCreate.password"><code class="docutils literal notranslate"><span class="pre">UserCreate.password</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="app.html#app.schemas.UserResponse"><code class="docutils literal notranslate"><span class="pre">UserResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.UserResponse.Config"><code class="docutils literal notranslate"><span class="pre">UserResponse.Config</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.UserResponse.avatar_url"><code class="docutils literal notranslate"><span class="pre">UserResponse.avatar_url</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.UserResponse.email"><code class="docutils literal notranslate"><span class="pre">UserResponse.email</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.UserResponse.id"><code class="docutils literal notranslate"><span class="pre">UserResponse.id</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.UserResponse.is_verified"><code class="docutils literal notranslate"><span class="pre">UserResponse.is_verified</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="app.html#app.schemas.UserResponse.model_config"><code class="docutils literal notranslate"><span class="pre">UserResponse.model_config</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="app.html#module-app">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">Welcome to FastAPI Contacts API's documentation!</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="app.html"
+                          title="next chapter">app package</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/modules.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="app.html" title="app package"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to FastAPI Contacts API&#39;s documentation!"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Contacts App 06.04.2025 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">app</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2025, Brelyk.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>

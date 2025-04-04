@@ -12,6 +12,9 @@ router = APIRouter(prefix="/contacts")
 @router.post("/", response_model=schemas.ContactResponse, status_code=status.HTTP_201_CREATED)
 def create_contact(contact: schemas.ContactCreate, db: Session = Depends(database.get_db),
                    current_user=Depends(get_current_user)):
+    """
+    Створює новий контакт для поточного користувача.
+    """
     created_contact = crud.create_contact(db, contact, current_user.id)
     if created_contact is None:
         raise HTTPException(status_code=400, detail="Contact with this email already exists.")
@@ -20,10 +23,16 @@ def create_contact(contact: schemas.ContactCreate, db: Session = Depends(databas
 @router.get("/", response_model=List[schemas.ContactResponse])
 def read_contacts(skip: int = 0, limit: int = 10, db: Session = Depends(database.get_db),
                   current_user=Depends(get_current_user)):
+    """
+    Отримує всі контакти поточного користувача.
+    """
     return crud.get_contacts(db, skip, limit, current_user.id)
 
 @router.get("/{contact_id:int}", response_model=schemas.ContactResponse)
 def read_contact(contact_id: int, db: Session = Depends(database.get_db), current_user=Depends(get_current_user)):
+    """
+    Отримує конкретний контакт за ID.
+    """
     contact = crud.get_contact(db, contact_id, current_user.id)
     if contact is None:
         raise HTTPException(status_code=404, detail="Contact not found")
@@ -32,6 +41,9 @@ def read_contact(contact_id: int, db: Session = Depends(database.get_db), curren
 @router.put("/{contact_id:int}", response_model=schemas.ContactResponse)
 def update_contact(contact_id: int, contact: schemas.ContactCreate, db: Session = Depends(database.get_db),
                    current_user=Depends(get_current_user)):
+    """
+    Оновлює контакт користувача.
+    """
     db_contact = crud.update_contact(db, contact_id, contact, current_user.id)
     if db_contact is None:
         raise HTTPException(status_code=404, detail="Contact not found")
@@ -39,6 +51,9 @@ def update_contact(contact_id: int, contact: schemas.ContactCreate, db: Session 
 
 @router.delete("/{contact_id:int}")
 def delete_contact(contact_id: int, db: Session = Depends(database.get_db), current_user=Depends(get_current_user)):
+    """
+    Видаляє контакт користувача.
+    """
     db_contact = crud.delete_contact(db, contact_id, current_user.id)
     if db_contact is None:
         raise HTTPException(status_code=404, detail="Contact not found")
@@ -52,8 +67,14 @@ def search_contacts(
         db: Session = Depends(database.get_db),
         current_user=Depends(get_current_user)
 ):
+    """
+    Пошук контактів за іменем, прізвищем або email.
+    """
     return crud.search_contacts(db, first_name, last_name, email, current_user.id)
 
 @router.get("/upcoming-birthdays", response_model=List[schemas.ContactResponse])
 def upcoming_birthdays(db: Session = Depends(database.get_db), current_user=Depends(get_current_user)):
+    """
+    Отримує контакти з днями народження впродовж 7 днів.
+    """
     return crud.get_upcoming_birthdays(db, current_user.id)
