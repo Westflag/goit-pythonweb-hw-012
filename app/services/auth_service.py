@@ -8,18 +8,18 @@ from fastapi import HTTPException
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig
 from jose import jwt, JWSError
 from passlib.context import CryptContext
-from pydantic import SecretStr, EmailStr
+from pydantic import SecretStr
 from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models import User
 
 conf = ConnectionConfig(
-    MAIL_USERNAME=os.getenv("EMAIL_USER", "test"),
-    MAIL_PASSWORD=os.getenv("EMAIL_PASSWORD", SecretStr('test')),
+    MAIL_USERNAME=os.getenv("EMAIL_USER", "api"),
+    MAIL_PASSWORD=os.getenv("EMAIL_PASSWORD", SecretStr('eab9f8d8e7ab19d53c529b72c7445fdd')),
     MAIL_FROM=os.getenv("EMAIL_FROM", "test@test.com"),
-    MAIL_PORT=int(os.getenv("EMAIL_PORT", "1")),
-    MAIL_SERVER=os.getenv("EMAIL_HOST", "test"),
+    MAIL_PORT=int(os.getenv("EMAIL_PORT", "587")),
+    MAIL_SERVER=os.getenv("EMAIL_HOST", "live.smtp.mailtrap.io"),
     MAIL_FROM_NAME="Contacts App",
     MAIL_STARTTLS=True,
     MAIL_SSL_TLS=False,
@@ -92,7 +92,18 @@ class AuthService:
             subtype="plain"
         )
         fm = FastMail(conf)
-        background_tasks.add_task(fm.send_message, message)
+        def _safe_send_email():
+            try:
+                return fm.send_message(message)
+            except Exception as e:
+                # Тут можна використати logger.error
+                print(f"❌ Failed to send email: {e}")
+                return None
+
+        background_tasks.add_task(_safe_send_email)
+
+
+
 
     # Підтвердження email користувача
     def verify_email(self, token: str, db: Session = next(get_db())):

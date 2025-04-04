@@ -20,7 +20,10 @@ async def signup(user: UserCreate, background_tasks: BackgroundTasks):
     :return: Дані нового користувача з відповіддю 201 Created
     """
     new_user = auth_service.register_user(user)
-    await auth_service.send_verification_email(new_user, background_tasks)
+    try:
+        await auth_service.send_verification_email(new_user, background_tasks)
+    except Exception as e:
+        print(f"Email verification send failed: {e}")
     return new_user
 
 
